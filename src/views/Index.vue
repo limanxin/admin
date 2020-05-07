@@ -75,8 +75,8 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      let rname = to.path.substring(to.path.lastIndexOf('/') + 1)
-      let oldname = from.path.substring(from.path.lastIndexOf('/') + 1)
+      const rname = to.path.substring(to.path.lastIndexOf('/') + 1)
+      const oldname = from.path.substring(from.path.lastIndexOf('/') + 1)
       console.log(rname, oldname)
       if (rname === 'welcome') {
         this.current = ''
@@ -87,8 +87,9 @@ export default {
     }
   },
   mounted () {
+    console.log(123)
     // 1.获取当前路由--嵌套路由
-    let rname = this.$route.path.substring(this.$route.path.lastIndexOf('/') + 1)
+    const rname = this.$route.path.substring(this.$route.path.lastIndexOf('/') + 1)
     // 2.直接设置menu的default-actvie属性为当前的路由名称
     this.current = rname
   }
